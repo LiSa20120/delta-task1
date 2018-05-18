@@ -1,5 +1,5 @@
 var mentees=[["Name",100000000,"Department",5,"Comments"]];
-var no-mentees=0;
+var no_mentees=0;
 
 
 function startTask(){
@@ -12,7 +12,7 @@ function startTask(){
 
 
 function getMentees(){
-
+      
 }
 
 
@@ -26,7 +26,7 @@ function displayMentees(){
         child.setAttribute("id","mainhead");
         parent.appendChild(child);
 
-        for(var i=0; i<no-mentees; ++i)
+        for(var i=0; i<no_mentees; ++i)
         {
             var child=document.createElement("div");
             var child1=document.createElement("p");
@@ -38,25 +38,28 @@ function displayMentees(){
                  child1.appendChild(str1);
                  child1.appendChild(child2);
 
+            
             str1=document.createTextNode("Roll no.:"+ mentees[i][1]);
             child2=document.createElement("br");
                
                  child1.appendChild(str1);
                  child1.appendChild(child2);
 
+            
             str1=document.createTextNode("Department:"+ mentees[i][2]);
             child2=document.createElement("br");
 
                  child1.appendChild(str1);
                  child1.appendChild(child2);
 
+            
             str1=document.createTextNode("Ratings:"+ mentees[i][3]);
             child2=document.createElement("br");
      
                  child1.appendChild(str1);
                  child1.appendChild(child2);
 
-
+            
             str1=document.createTextNode("Comments:"+ mentees[i][4]);
             child2=document.createElement("br");  
 
@@ -75,36 +78,24 @@ function displayMentees(){
             parent.appendChild(child);
 
         }
-        var button = document.getElementById('edit');
-        button.setAttribute("class","button");
-        button = document.getElementById('sort');
-        button.setAttribute("class","button");
-        button = document.getElementById('delete');
-        button.setAttribute("class","button");
-        button = document.getElementById('add');
-        button.setAttribute("class","button");
+        
 }
 
 
 
-function addMentee(index){
+function addMentee(){
 
      clearscreen();
      var parent=document.getElementById("details");
      var child=document.createElement("form");
-     var head1=document.createElement("head");
-     if(index=-1)
-       {
-        var str1=document.createTextNode("Add New Mentee");
-       }
+     var head1=document.createElement("h2");
+     var str1=document.createTextNode("Add New Mentee");
+       
          
         head1.appendChild(str1);
+        head1.setAttribute("id","mainhead");
         child.appendChild(head1);
-
-
-     
-
-
+        
         //Name
         var text1=document.createElement("p");
         var break1=document.createElement("br");
@@ -117,10 +108,11 @@ function addMentee(index){
         input1.setAttribute("style","color: #000000;margin : 10px 20px 10px 20px;padding : 10px 20px 10px 20px;font-size: 15px;background: rgba(255,255,255,1);border: 1px black;border-radius: 2px;")
         
 
-                   str1.appendChild(input1);
                    text1.appendChild(break1);
-                   text1.appendChild(str);
+                   text1.appendChild(str1);
+                   text1.appendChild(input1);
                    child.appendChild(text1);
+          
 
         //Rollno
         var text2=document.createElement("p");
@@ -130,13 +122,13 @@ function addMentee(index){
 
         input2.setAttribute("type","number");
         input2.setAttribute("size","50");
-        input2.setAttribute("id","number");
+        input2.setAttribute("id","rollno");
         input2.setAttribute("style","color: #000000;margin : 10px 20px 10px 20px;padding : 10px 20px 10px 20px;font-size: 15px;background: rgba(255,255,255,1);border: 1px black;border-radius: 2px;")
         
 
-                   str2.appendChild(input2);
                    text2.appendChild(break2);
                    text2.appendChild(str2);
+                   text2.appendChild(input2);
                    child.appendChild(text2);                   
 
         //Department   
@@ -151,11 +143,10 @@ function addMentee(index){
         input3.setAttribute("style","color: #000000;margin : 10px 20px 10px 20px;padding : 10px 20px 10px 20px;font-size: 15px;background: rgba(255,255,255,1);border: 1px black;border-radius: 2px;")
         
 
-                   str3.appendChild(input3);
                    text3.appendChild(break3);
                    text3.appendChild(str3);
+                   text3.appendChild(input3);
                    child.appendChild(text3);
-
         //Ratings
         var text4=document.createElement("p");
         var break4=document.createElement("br");
@@ -171,9 +162,9 @@ function addMentee(index){
         input4.setAttribute("style","color: #000000;margin : 10px 20px 10px 20px;padding : 10px 20px 10px 20px;font-size: 15px;background: rgba(255,255,255,1);border: 1px black;border-radius: 2px;")
         
 
-                   str4.appendChild(input4);
                    text4.appendChild(break4);
                    text4.appendChild(str4);
+                   text4.appendChild(input4);
                    child.appendChild(text4);
 
 
@@ -183,43 +174,31 @@ function addMentee(index){
         var str5=document.createTextNode("Comments:");
         var textarea=document.createElement("textarea");
                    
-        textarea.setAttribute("type","number");
+        textarea.setAttribute("type","text");
         textarea.setAttribute("id","comments");
-        textaraea.setAttribute("rows","5");
+        textarea.setAttribute("rows","5");
         textarea.setAttribute("columns","50");
         textarea.setAttribute("style","color: #000000;margin : 10px 20px 10px 20px;padding : 10px 20px 10px 20px;font-size: 15px;background: rgba(255,255,255,1);border: 1px black;border-radius: 2px;")
         
-                   str5.appendChild(textarea);
                    text5.appendChild(break5);
-                   text5.appendChild(str);
+                   text5.appendChild(str5);
+                   text5.appendChild(textarea);
                    child.appendChild(text5);
 
-
         //submit button
-        var button = document.createElement('input');
-        var submit = document.createElement('button');
+        var button = document.createElement('button');
         var str6 = document.createTextNode('Submit');
         var text6 = document.createElement('p');
 
-        submit.setAttribute("onclick","storeMentee()");
-        submit.setAttribute("style","max-width: 200px;  margin:auto;  text-align: center;  background-color: rgbs(255,255,255,1);  border-radius: 8px;  padding : 20px 40px 20px 40px;  font-size: 20px;  color: #000000;");
-        submit.appendChild(str6);
+        button.setAttribute("onclick","storeMentee()");
+        button.setAttribute("style","max-width: 200px;  margin:auto;  text-align: center;  background-color: rgbs(255,255,255,1);  border-radius: 8px;  padding : 20px 40px 20px 40px;  font-size: 20px;  color: #000000;");
+        button.appendChild(str6);
         text6.appendChild(button);
-        text6.appendChild(submit);
-        form.appendChild(text6);
-        form.setAttribute("id","form")
-     parent.appendChild(child);
+        child.appendChild(text6);
+        child.setAttribute("id","form")
+        parent.appendChild(child);
 
 
-     var button = document.getElementById('modify');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('sort');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('remove');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('addnew');
-     button.setAttribute("class","disabledbutton");
-     
 }
 
 function clearscreen()
@@ -227,7 +206,7 @@ function clearscreen()
   var parent = document.getElementById('details');
   var child1 = document.getElementById('mainhead');
   parent.removeChild(child1);
-  for( i = 0 ; i < no_men; ++i)
+  for( i = 0 ; i < no_mentees; ++i)
   {
     var child = document.getElementById('mentee' + i);
     parent.removeChild(child);
@@ -242,11 +221,11 @@ function storeMentee(){
     var comments = document.getElementById('comments').value;
 
 
-    mentees[no-mentees][0]=name;
-    mentees[no-mentees][1]=rollno;
-    mentees[no-mentees][2]=dept;
-    mentees[no-mentees][3]=rating;
-    mentees[no-mentees][4]=comments;
+    mentees[no_mentees][0]=name;
+    mentees[no_mentees][1]=rollno;
+    mentees[no_mentees][2]=dept;
+    mentees[no_mentees][3]=rating;
+    mentees[no_mentees][4]=comments;
 
     next();
     displayMentees();
@@ -263,46 +242,30 @@ function next(){
 
 
 function editMentee(){
-     var button = document.getElementById('modify');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('sort');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('remove');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('addnew');
-     button.setAttribute("class","disabledbutton"); 
-
-     for ( i = 0; i < no_men; ++i)
+    for ( i = 0; i < no_mentees; ++i)
      {
         var str = "mentee" + i;
-        var k = i;
-        if(str === event.currentTarget.id)
+        
+      if(str === event.currentTarget.id)
         { 
           clearscreen(); 
-          addnewmentee(i);
+          addMentee();
         }
      }
 }
 
 function deleteMentee(){
-     var button = document.getElementById('modify');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('sort');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('remove');
-     button.setAttribute("class","disabledbutton");
-     button = document.getElementById('addnew');
-     button.setAttribute("class","disabledbutton");
+     
 
      
-     for ( i = 0; i < no_men; ++i)
+     for ( i = 0; i < no_mentees; ++i)
      {
        var str = "mentee" + i;
-       var k = i;
+       
        if(str === event.currentTarget.id)
-     {
-        var delNode= k;
-        for( k = delNode + 1; k < no_men; ++k)
+      {
+        var delNode= i;
+        for( k = delNode + 1; k < no_mentees; ++k)
         {
           var j;
           for( j = 0; j < 5; ++j)
@@ -310,20 +273,20 @@ function deleteMentee(){
             mentees[k-1][j] = mentees[k][j];
           }
         }
-        delNode = -1;
+        
         clearscreen();
-        --no-mentees;
+        --no_mentees;
         dispMentees();
       }
-}
+}}
 
 function sortMentees()
 {
 
-  for(i = no-mentees - 1; i > 0; --i)
+  for(i = no_mentees - 1; i > 0; --i)
   {
     var j;
-    for( j = no-mentees - 1 ; j > (no-mentees - i -1) ; --j)
+    for( j = no_mentees - 1 ; j > (no_mentees - i -1) ; --j)
     {
       if(parseInt(mentees[j][3]) > parseInt(mentees[j-1][3]))
       {
@@ -346,5 +309,5 @@ function sortMentees()
     }
   }
   clearscreen();
-  dispmentees();
+  dispMentee();
 }
