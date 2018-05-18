@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="delta1.css" rel="stylesheet" type="text/css">
+    <title>Mentee Management</title>
+</head>
+<body onload="startTask()">
+    <div id="intro">
+        <h1 style=>Hey Deep!</h1>
+        <p style="font-size: 20px;text-align=center">Looks like you're busy at your intern.
+            Here's a webpage for you to manage your mentees,give them ratings and write down comments on their progress.
+            Click on the <strong>add</strong> button to add mentees,<strong>edit</strong> button to edit mentees profile,<strong>delete</strong>> button to delete a mentee from the list and </strong>sort</strong> button to sort mentees according to the rating.</p>
+            <p>Hope this helps you :)</p>   
+    </div>
+    <br>
+    <div class="container">
+       <div class="func">
+           <button class="button" id="add" onclick="addMentee(-1)">Add</button>
+           <button class="button" id="edit" onclick="editMentee()">Edit</button>
+           <button class="button" id="delete" onclick="deleteMentee()">Delete</button>
+           <button class="button" id="sort" onclick="sortMentees()">Sort</button>
+       </div>
+       <div class="details">
+       </div>
+    </div>
+    
+    <script src="mymentee.js" type="text/jvascript"></script>
+</body>
+</html>
