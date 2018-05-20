@@ -12,6 +12,19 @@ function startTask(){
 
 
 function getMentees(){
+    if(localStorage.mentees)
+    {
+      mentees = JSON.parse(localStorage.mentees);
+      if(localStorage.total)
+      {
+        no_mentees = localStorage.total;
+      }
+    }
+    else
+    {
+
+    }
+      
       
 }
 
