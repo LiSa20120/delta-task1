@@ -52,6 +52,11 @@ function add() {
     var rollNo = document.getElementById("rollno").value;
     var comment=document.getElementById("comment").value;
     rating= document.getElementById("rating").value;
+    if(!(rating==1||rating==2||rating==3||rating==4||rating==5))
+    {
+        alert("Integer value not in the range of [1,5]");
+        return;
+    }
     var row=document.getElementById("table").insertRow(-1);
     row.class="row";
 
